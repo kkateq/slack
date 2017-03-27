@@ -1,4 +1,4 @@
-import http from 'tiny-json-http'
+import http from 'request'
 
 export default function exec(url, form, callback) {
 
@@ -15,19 +15,22 @@ export default function exec(url, form, callback) {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
-    data: form
-  }, 
-  function _res(err, res) {
-    // var rateLimit = 'You are sending too many requests. Please relax.'
-    if (err) {
-      // if request failed bubble the error
-      callback(err)
-    }
-    else if (res.body && res.body.error) {
-      callback(Error(res.body.error))
-    }
-    else {
-      callback(null, res.body)
-    }
-  })
+    form
+  },
+    function _res(err, res) {
+      // var rateLimit = 'You are sending too many requests. Please relax.'
+      if (err) {
+        // if request failed bubble the error
+        callback(err)
+      }
+      else if (res.body) {
+        const data = JSON.parse(res.body)
+        if (data.error) {
+          callback(Error(data.error))
+        }
+        else {
+          callback(null, data)
+        }
+      }
+    })
 }

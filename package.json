@@ -1,6 +1,6 @@
 {
-  "name": "slack",
-  "version": "8.2.6",
+  "name": "slack-proxy",
+  "version": "8.2.7",
   "description": "Slack API client written in JS",
   "main": "methods/index",
   "browser": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smallwins/slack.git"
+    "url": "git+https://github.com/kkateq/slack.git"
   },
   "keywords": [
     "slack",
@@ -28,9 +28,9 @@
   "author": "Brian LeRoux <b@brian.io>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/smallwins/slack/issues"
+    "url": "https://github.com/kkateq/slack/issues"
   },
-  "homepage": "https://github.com/smallwins/slack#readme",
+  "homepage": "https://github.com/kkateq/slack#readme",
   "devDependencies": {
     "async": "^2.1.2",
     "babel-cli": "^6.3.15",

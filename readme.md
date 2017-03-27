@@ -1,3 +1,5 @@
+This is fork with fixed issue with using package behind the HTTP(S) proxy. HTTP client `tiny-json-http` has been replaced with `request` client which supports `HTTP(S)_PROXY` env settings by default.
+
 <p align="center">
   <img width="333px" src=https://s3-us-west-1.amazonaws.com/bugbot/slack-js.svg>
 </p>
